@@ -10,6 +10,5 @@ describe("Cypress Basics", function(){
         cy.get('@checkPoint').uncheck().should('not.be.checked')
         cy.get('input[type="checkbox"]').as('allCheckbox')
         cy.get('@allCheckbox').check(['option1', 'option2']).should('be.checked')
-        
     })
 })
