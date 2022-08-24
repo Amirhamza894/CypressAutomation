@@ -12,5 +12,19 @@ describe("Cypress Basics", function(){
         cy.get('@allCheckbox').check(['option1', 'option2']).should('be.checked')
     })
 
-    it('')
+    it('Dropdown in cypress', function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('select').select('Option1').should('have.value', 'option1')
+    })
+
+    it('Dynamic dropdown in cypress', function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('#autocomplete').type('pak')
+        cy.get(".ui-menu-item").each(($el, index, $list) => {
+            const countryName = $el.text()
+            if(countryName === 'Pakistan'){
+                cy.wrap($el).click()
+            }
+        })
+    })
 })
