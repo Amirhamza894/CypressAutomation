@@ -54,4 +54,5 @@ describe("Cypress Basics", function(){
         // Should have.text is assertion which verify text
         cy.get('@loginWindow').should('have.text', 'WELCOME TO OLX')
     })
+    
 })
