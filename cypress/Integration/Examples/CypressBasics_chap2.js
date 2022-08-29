@@ -42,8 +42,9 @@ describe("Cypress Basics", function(){
     })
 
     it("Alerts in cypress", function(){
-        /** Alerts are auto accepting in cypress and we cannot validate alerts text or anything 
-         * through cypress so we will use mocha framwork for validation **/
+        /** Alerts are auto accepting in cypress and we cannot
+         * validate alerts text or anything through cypress so 
+         * we will use mocha framwork for validation **/
 
         // Simple Alert
         cy.get('#alertbtn').click()
@@ -57,8 +58,9 @@ describe("Cypress Basics", function(){
         })
     })
 
-    it("Child windows in cypress", function(){
-        /** Cypress can not handle child windows like navigating to another window and do something but we can use jquery to open 'target' 
+    it("Child windows and browser navigation in cypress", function(){
+        /** Cypress can not handle child windows like navigating to 
+         * another window and do something but we can use jquery to open 'target' 
          * attribute windows and open in same window.
          * we will remove target attribute by manipulating HTML by jquery.
          */
@@ -66,7 +68,7 @@ describe("Cypress Basics", function(){
         cy.get("#opentab").invoke('removeAttr', 'target').click()
         cy.title().should('eq', 'Rahul Shetty Academy')
         cy.url().should('include', 'rahulshettyacademy')
-        cy.go('back')
+        cy.go('back') // Navigating back
         cy.url().should('eq', 'https://rahulshettyacademy.com/AutomationPractice/')
     })
 
@@ -90,8 +92,13 @@ describe("Cypress Basics", function(){
     it('muse hover in cypress', function(){
 
         cy.get('.mouse-hover-content').invoke('show')
-        cy.contains('Top').click({force : true})
+        // OR cy.get('.mouse-hover-content').click({force:true})
+        cy.contains('Top').click()
         cy.contains('Top').click()
         cy.url().should('include', 'top')
+    })
+
+    it('Third tab window in cypress', function(){
+        
     })
 })
