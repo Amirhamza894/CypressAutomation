@@ -99,6 +99,28 @@ describe("Cypress Basics", function(){
     })
 
     it('Third tab window in cypress', function(){
-        
+        /** 
+         * Cypress not allow user to lunch another domain url when the control is already in one domain.
+         * like for example when user click on a link which open a third party link and a new small tab
+         * seperate from browser.
+         * how will we handle this?
+         * if we get DOM property "url" through jquery and copy past that url to another variable and visit
+         * to that third party url.
+         * what will happened? let's see in action
+         */
+    //  cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    //  cy.get('#openwindow').then(function($el){
+    //     const url = $el.prop('href')
+    //     cy.log(url)
+    //     cy.visit(url)
+    //  })
+         /**
+          * Cypress not allow to visit third party domain or in short it don't allow other link seperate from domain
+          */
+
+    })
+
+    it('Frames in Cypress', () => {
+
     })
 })
