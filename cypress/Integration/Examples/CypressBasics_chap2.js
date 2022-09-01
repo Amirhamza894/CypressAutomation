@@ -1,4 +1,6 @@
 /// <reference types="Cypress" />
+/// <reference types="cypress-iframe" />
+import 'cypress-iframe';
 
 describe("Cypress Basics", function(){
 
@@ -121,6 +123,16 @@ describe("Cypress Basics", function(){
     })
 
     it('Frames in Cypress', () => {
+        /** first install cypress-iframe and import these lines to the top of the page.
+         * /// <reference types="cypress-iframe" />
+         * import "cypress-iframe"
+         */
+
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+
+        // cy.frameLoaded({url: 'https://www.rahulshettyacademy.com/'})
+        // cy.iframe('#courses-iframe').find('.current').eq('0').should('be.visible').click()
+        // cy.iframe(".inner-box h1").should('be.visible')
 
     })
 })
