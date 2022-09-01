@@ -130,9 +130,9 @@ describe("Cypress Basics", function(){
 
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
-        // cy.frameLoaded({url: 'https://www.rahulshettyacademy.com/'})
-        // cy.iframe('#courses-iframe').find('.current').eq('0').should('be.visible').click()
-        // cy.iframe(".inner-box h1").should('be.visible')
-
+        cy.frameLoaded({url: 'https://www.rahulshettyacademy.com/'})
+        cy.iframe().find("a[href='mentorship']").eq('0').should('be.visible').click()
+        cy.wait(5000)
+        cy.iframe().find("h1[class*='pricing-title']").should('have.length', 2)
     })
 })
